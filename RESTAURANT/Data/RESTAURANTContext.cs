@@ -19,5 +19,7 @@ namespace RESTAURANT.Data
         public DbSet<RESTAURANT.Models.Menu>? Menu { get; set; }
 
         public DbSet<RESTAURANT.Models.Reservation>? Reservation { get; set; }
+
+        public DbSet<RESTAURANT.Models.Client>? Client { get; set; }
     }
 }

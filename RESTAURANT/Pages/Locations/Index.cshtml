@@ -1,14 +1,42 @@
 ﻿@page
 @model RESTAURANT.Pages.Locations.IndexModel
+<style>
 
+    h1 {
+        color: white;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid white;
+        padding: 8px;
+        text-align: center;
+        color: white;
+    }
+
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: purple;
+    }
+</style>
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Locatii</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Adauga o locatie</a>
 </p>
 <table class="table">
     <thead>
@@ -32,9 +60,9 @@
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.LocationId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.LocationId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.LocationId">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.LocationId">Editeaza</a> |
+                <a asp-page="./Details" asp-route-id="@item.LocationId">Detalii</a> |
+                <a asp-page="./Delete" asp-route-id="@item.LocationId">Sterge</a>
             </td>
         </tr>
 }
