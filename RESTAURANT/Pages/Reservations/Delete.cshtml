@@ -1,13 +1,55 @@
 ﻿@page
 @model RESTAURANT.Pages.Reservations.DeleteModel
+<style>
+    h1 {
+        color: white;
+    }
 
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    .row{
+        text-align:center;
+    }
+
+    th, td {
+        border: 1px solid white;
+        padding: 8px;
+        text-align: center;
+        color: white;
+    }
+
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: purple;
+    }
+
+    .btn{
+        background-color: purple;
+        color: white;
+        border-radius: 10px;
+    }
+
+    .btn :hover{
+        background-color: white;
+        color: purple;
+        border-radius: 10px;
+    }
+</style>
 @{
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
+<h1>Sterge</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Sigur vrei sa stergi rezervarea?</h3>
 <div>
     <h4>Reservation</h4>
     <hr />
@@ -28,7 +70,9 @@
     
     <form method="post">
         <input type="hidden" asp-for="Reservation.ReservationId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
+        <br />
+
+        <input type="submit" value="Sterge" class="btn btn-danger" /> |
+        <a asp-page="./Index">Sterge</a>
     </form>
 </div>
