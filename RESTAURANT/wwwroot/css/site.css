@@ -81,3 +81,29 @@ main {
         margin-bottom: 10px;
     }
 }
+
+.btn {
+    background-color: purple;
+    color: white;
+    border-radius: 10px;
+    border:none;
+}
+
+.btn:hover {
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+}
+
+table {
+    background: #00000070;
+    border:none;
+}
+
+tr {
+    border-bottom: 1px solid #ffffff2b;
+}
+
+th, td {
+    border:none;
+}

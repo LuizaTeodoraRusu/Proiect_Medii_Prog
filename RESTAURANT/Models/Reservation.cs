@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace RESTAURANT.Models
 {
     public class Reservation
@@ -9,19 +11,19 @@ namespace RESTAURANT.Models
 
         [Required]
         [Display(Name = "Locatia")]
-        public int LocationId { get; set; }
+        public int? LocationId { get; set; }
 
         [BindProperty]
         [Display(Name = "Locatia")]
-        public Location Location { get; set; }
+        public Location? Location { get; set; }
 
         [Required]
         [Display(Name = "Meniu")]
-        public int MenuId { get; set; }
+        public int? MenuId { get; set; }
 
         [BindProperty]
         [Display(Name = "Meniu")]
-        public Menu Menu { get; set; }
+        public Menu? Menu { get; set; }
 
         [Required]
         [Display(Name = "Data si ora")]

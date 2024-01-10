@@ -15,6 +15,6 @@ namespace RESTAURANT.Models
         [Required]
         public string Address { get; set; }
 
-        public ICollection<Reservation> Reservations { get; set; }
+        //public ICollection<Reservation> Reservations { get; set; }
     }
 }

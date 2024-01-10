@@ -14,7 +14,7 @@ namespace RESTAURANT.Models
         public decimal Price { get; set; }
 
         [Display(Name = "Detalii")]
-        public string Details { get; set; }
+        public string? Details { get; set; }
 
         public ICollection<Reservation> Reservations { get; set; }
 

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RESTAURANT.Data;
 
@@ -11,9 +12,10 @@ using RESTAURANT.Data;
 namespace RESTAURANT.Migrations
 {
     [DbContext(typeof(RESTAURANTContext))]
-    partial class RESTAURANTContextModelSnapshot : ModelSnapshot
+    [Migration("20240110203132_Data")]
+    partial class Data
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,6 +83,7 @@ namespace RESTAURANT.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MenuId"), 1L, 1);
 
                     b.Property<string>("Details")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -110,12 +113,10 @@ namespace RESTAURANT.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("LocationId")
-                        .IsRequired()
+                    b.Property<int>("LocationId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("MenuId")
-                        .IsRequired()
+                    b.Property<int>("MenuId")
                         .HasColumnType("int");
 
                     b.Property<string>("PhoneNumber")
