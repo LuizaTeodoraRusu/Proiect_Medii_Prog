@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RESTAURANT.Data;
 
@@ -11,9 +12,10 @@ using RESTAURANT.Data;
 namespace RESTAURANT.Migrations
 {
     [DbContext(typeof(RESTAURANTContext))]
-    partial class RESTAURANTContextModelSnapshot : ModelSnapshot
+    [Migration("20240110160705_RezervareDetalii")]
+    partial class RezervareDetalii
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -137,13 +139,13 @@ namespace RESTAURANT.Migrations
             modelBuilder.Entity("RESTAURANT.Models.Reservation", b =>
                 {
                     b.HasOne("RESTAURANT.Models.Location", "Location")
-                        .WithMany("Reservations")
+                        .WithMany()
                         .HasForeignKey("LocationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("RESTAURANT.Models.Menu", "Menu")
-                        .WithMany("Reservations")
+                        .WithMany()
                         .HasForeignKey("MenuId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -151,16 +153,6 @@ namespace RESTAURANT.Migrations
                     b.Navigation("Location");
 
                     b.Navigation("Menu");
-                });
-
-            modelBuilder.Entity("RESTAURANT.Models.Location", b =>
-                {
-                    b.Navigation("Reservations");
-                });
-
-            modelBuilder.Entity("RESTAURANT.Models.Menu", b =>
-                {
-                    b.Navigation("Reservations");
                 });
 #pragma warning restore 612, 618
         }

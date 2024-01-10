@@ -6,10 +6,15 @@ namespace RESTAURANT.Models
         public int LocationId { get; set; }
 
         [Required]
+        [Display(Name = "Nume")]
+
         public string Name { get; set; }
+
+        [Display(Name = "Adresa")]
 
         [Required]
         public string Address { get; set; }
 
+        public ICollection<Reservation> Reservations { get; set; }
     }
 }
